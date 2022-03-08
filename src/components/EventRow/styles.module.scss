@@ -28,6 +28,7 @@ td.action_cell {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  background-color: #5b6097;
 
   .action {
     white-space: nowrap;
@@ -50,6 +51,7 @@ td.view_cell {
   padding: 1.5rem;
   width: 10rem;
   text-align: right;
+  background-color: #5b6097;
 
   a,
   button {
@@ -70,4 +72,5 @@ td.points_cell {
   text-align: right;
   padding: 1.5rem;
   width: 8rem;
+  background-color: #5b6097;
 }

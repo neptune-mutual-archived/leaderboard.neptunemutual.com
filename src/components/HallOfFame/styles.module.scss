@@ -47,7 +47,10 @@
 
 .table_wrapper {
   border: 0.5px solid rgba(255, 255, 255, 0.25);
-  overflow-x: scroll;
+
+  @media (max-width: 37.5em) {
+    overflow-x: scroll;
+  }
 }
 
 .rank_head_cell {
