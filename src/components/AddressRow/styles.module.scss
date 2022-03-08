@@ -21,15 +21,33 @@ td.rank_cell {
     align-items: center;
 
     span.first {
-      font-size: 39px;
-      width: 34px;
+      font-size: 2.438rem;
+      width: 1.25rem;
+      margin-right: 0.25rem;
     }
 
     span {
       display: inline-block;
-      margin-right: 4px;
-      width: 39px;
+      margin-right: 0.625rem;
+      width: 1rem;
+      font-size: 1.438rem;
+      text-align: right;
     }
+
+    @media (max-width: 37.5em) {
+      span,
+      span.first {
+        margin-right: 0;
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 37.5em) {
+    padding: 1.25rem 0.938rem;
   }
 }
 
@@ -59,18 +77,30 @@ td.name_cell {
   padding-left: 1rem;
   padding-right: 1rem;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
+  background-color: #5b6097;
 
   h3 {
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   &.name_cell_0 {
     font-weight: 600;
-    font-size: 23px;
+
+    @media (min-width: 48em) {
+      font-size: 1.188rem;
+    }
+
+    @media (min-width: 75em) {
+      font-size: 1.438rem;
+    }
+  }
+
+  .truncated_string_mobile {
+    opacity: 0.4;
+    font-size: 0.875rem;
   }
 }
 
@@ -78,14 +108,24 @@ td.address_cell {
   padding-left: 1rem;
   font-size: 14px;
   line-height: 17px;
+  background-color: #5b6097;
 }
 
 td.points_cell {
   font-weight: 600;
   font-size: 19px;
   line-height: 23px;
+  background-color: #5b6097;
+}
+
+td.link_cell {
+  background-color: #5b6097;
 }
 
 td .link {
   padding: 16px;
+
+  @media (min-width: 62em) {
+    padding: 0;
+  }
 }

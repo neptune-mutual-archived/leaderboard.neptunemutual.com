@@ -3,11 +3,9 @@
 }
 
 .title_container {
-  text-align: center;
-
   h2 {
     font-weight: bold;
-    font-size: 2.063rem;
+    font-size: 1.438rem;
     line-height: 40px;
     letter-spacing: 0.05em;
     color: #cdcdd6;
@@ -15,6 +13,7 @@
 
     @media (min-width: 75em) {
       margin: 2.188rem 0;
+      font-size: 2.063rem;
     }
   }
 
@@ -35,6 +34,10 @@
     }
   }
 
+  @media (max-width: 37.5em) {
+    text-align: center;
+  }
+
   @media (min-width: 75em) {
     display: flex;
     justify-content: space-between;
@@ -49,6 +52,10 @@
 
 .rank_head_cell {
   padding-left: 3rem;
+
+  @media (max-width: 37.5em) {
+    padding-left: 0.563rem;
+  }
 }
 
 .name_head_cell {
