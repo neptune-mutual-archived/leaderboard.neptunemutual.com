@@ -6,9 +6,9 @@ import FacebookIcon from "../icons/FacebookIcon";
 import TelegramIcon from "../icons/TelegramIcon";
 import TwitterIcon from "../icons/TwitterIcon";
 import WhatsAppIcon from "../icons/WhatsAppIcon";
-import ShareIcon from "../icons/ShareIcon";
 import styles from "./styles.module.scss";
 import { SearchBox } from "../SearchBox";
+import { ShareLinksPopover } from "../ShareLinksPopover";
 
 export const Footer = ({ searchTerm, setSearchTerm }) => {
   const [copied, setCopied] = useState(false);
@@ -114,7 +114,12 @@ export const Footer = ({ searchTerm, setSearchTerm }) => {
       </div>
       <div className={styles.footer_mobile}>
         <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <ShareIcon />
+        <ShareLinksPopover
+          url={url}
+          text={text}
+          copied={copied}
+          copyAddress={copyAddress}
+        />
       </div>
     </footer>
   );
