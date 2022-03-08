@@ -47,7 +47,7 @@ export default function Home() {
           totalUsers={data.totalUsers}
         />
 
-        <Footer />
+        <Footer searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
     </>
   );

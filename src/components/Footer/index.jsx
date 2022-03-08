@@ -6,9 +6,11 @@ import FacebookIcon from "../icons/FacebookIcon";
 import TelegramIcon from "../icons/TelegramIcon";
 import TwitterIcon from "../icons/TwitterIcon";
 import WhatsAppIcon from "../icons/WhatsAppIcon";
+import ShareIcon from "../icons/ShareIcon";
 import styles from "./styles.module.scss";
+import { SearchBox } from "../SearchBox";
 
-export const Footer = () => {
+export const Footer = ({ searchTerm, setSearchTerm }) => {
   const [copied, setCopied] = useState(false);
   const [url, setUrl] = useState("");
   const text = `Neptune Mutual Leaderboard`;
@@ -37,15 +39,21 @@ export const Footer = () => {
   return (
     <footer>
       <div className={classNames("container", styles.footer)}>
-        <div></div>
-
         <p className={styles.credits_wrapper}>
           <a
-            href="https://example.com"
+            href="https://avatars.dicebear.com/styles/micah"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Credits
+            {'"Micah"'}
+          </a>
+          <span>by Micah Lanier is licensed under</span>
+          <a
+            href="https://creativecommons.org/licenses/by/4.0/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CC BY 4.0
           </a>
         </p>
 
@@ -103,6 +111,10 @@ export const Footer = () => {
             </button>
           </p>
         </div>
+      </div>
+      <div className={styles.footer_mobile}>
+        <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <ShareIcon />
       </div>
     </footer>
   );
