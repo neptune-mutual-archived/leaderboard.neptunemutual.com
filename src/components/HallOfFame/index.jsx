@@ -2,6 +2,7 @@ import { BUG_REPORT_URL } from "../../config";
 import { AddressRow } from "../AddressRow";
 import { Pagination } from "../Pagination";
 import styles from "./styles.module.scss";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export const HallOfFame = ({
   data,
@@ -13,6 +14,8 @@ export const HallOfFame = ({
   setLimit,
   totalUsers,
 }) => {
+  const { width } = useWindowSize();
+
   return (
     <div className={styles.wrapper}>
       <div className="container">
@@ -44,6 +47,7 @@ export const HallOfFame = ({
           </table>
 
           <Pagination
+            noSearch={width < 1200 ? true : false} // for tablet and mobile view, remove search component
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             skip={skip}
