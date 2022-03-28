@@ -9,6 +9,7 @@ import WhatsAppIcon from "../icons/WhatsAppIcon";
 import styles from "./styles.module.scss";
 import { SearchBox } from "../SearchBox";
 import { ShareLinksPopover } from "../ShareLinksPopover";
+import { useRouter } from "next/router";
 
 const leaderTexts = [
   `Neptune Mutual just launched their protocol testnet! I've been having fun and getting points trying out their platform.\n\nCheck out the latest rankings on their Hall of Fame leaderboard:\n<URL>\n\n#neptunemutual #testnet #cover #defi`,
@@ -25,6 +26,7 @@ export const Footer = ({ page, points, searchTerm, setSearchTerm }) => {
   const [copied, setCopied] = useState(false);
   const [url, setUrl] = useState("");
   const [text, setText] = useState("");
+  const router = useRouter();
 
   const getText = () => {
     let randomIndex, randomText, replaceUrl;
@@ -32,12 +34,11 @@ export const Footer = ({ page, points, searchTerm, setSearchTerm }) => {
       if (page === "leaderboard") {
         randomIndex = Math.floor(Math.random() * leaderTexts.length);
         randomText = leaderTexts[randomIndex];
-        replaceUrl = window.location.origin;
       } else if (page === "profile") {
         randomIndex = Math.floor(Math.random() * profileTexts.length);
         randomText = profileTexts[randomIndex];
-        replaceUrl = window.location.href;
       }
+      replaceUrl = window.location.href;
       randomText = randomText.replace("<URL>", replaceUrl);
       randomText = randomText.replace("<POINT>", points);
     }
@@ -47,7 +48,7 @@ export const Footer = ({ page, points, searchTerm, setSearchTerm }) => {
   useEffect(() => {
     setUrl(window.location.origin);
     setText(getText());
-  }, [points]);
+  }, [points, router]);
 
   useEffect(() => {
     if (copied) {
